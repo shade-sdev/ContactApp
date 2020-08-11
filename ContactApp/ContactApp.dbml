@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ContactAppDB" Class="ContactAppDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ContactAppDB.mdf;Integrated Security=True" SettingsObjectName="ContactApp.Properties.Settings" SettingsPropertyName="ContactAppDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblContacts" Member="tblContacts">
+    <Type Name="tblContact">
+      <Column Name="contact_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="number" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="image" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="facebook" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="instagram" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="date_added" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AddContact" Method="AddContact">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="number" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="image" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="address" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="facebook" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="instagram" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
